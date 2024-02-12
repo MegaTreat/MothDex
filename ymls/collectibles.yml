@@ -1,10 +1,13 @@
 countryballs:
-    ball 1: url
-    ball 2: url again
+  Moth: https://media.discordapp.net/attachments/1160304030896099440/1206329223522820106/moth_PNG39.png.webp?ex=65db9ca3&is=65c927a3&hm=9d76cfb08db2caf58e96897f7998c8fc6a945475d313040f624023b3b5e350d8&
+  Comet Moth: https://media.discordapp.net/attachments/1179162706960457811/1206527502432866315/comet_moth_1_1_1.png?ex=65dc554c&is=65c9e04c&hm=330ab5b1e10793996200a8a44dc4dad5ecfb619789047b1f1659a4255dd201a2&
+  Moth M1: https://media.discordapp.net/attachments/1179162706960457811/1206530292765036575/Abrams-transparent.png?ex=65dc57e6&is=65c9e2e6&hm=6566ac90e2a1699d4cdae305e989ceb9ba977ed41322f466f9c2ba274dc333d5&
+  Moth Larvae: https://media.discordapp.net/attachments/1179162706960457811/1206531656916144148/diamondback_moth_product.png?ex=65dc592b&is=65c9e42b&hm=efd2cdb3af0e40ddc8b50a4d259593d30d2c45be9d28e8acd2a8935cd1c5861c&,
+  Lamp Moth: https://media.discordapp.net/attachments/1179162706960457811/1206533469040021574/pngimg.com_-_moth_PNG63_2.png?ex=65dc5adb&is=65c9e5db&hm=3a16d5a77b42210803d80e35781daa897a27b52afbca6bd29ea55f90c346ee4b&
 
 ball_to_emoji:
-    ball 1: emoji
-    ball 2: emoji again
-
-# i recommend reading the README inside this folder
-# note, it doesnt need the ID, it needs the ACTUAL emoji id (something like <:full_rat:1205271877245730878>), you can get it by doing \:emoji_name: please note that it is CasE SensItivE
+  Moth: <:moth:1206331094694240306>
+  Comet Moth: <:comet_moth:1206527306634502174>
+  Moth M1: <:moth_m1:1206530127362531368>
+  Moth Larvae: <:moth_larvae:1206531483288997918>
+  Lamp Moth: <:lamp_moth:1206533264882405377>

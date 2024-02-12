@@ -10,6 +10,9 @@ with open("ymls/collectibles.yml") as f:
 
 countryballs = collectibles['countryballs']
 
+with open('ymls/collectibles.yml', 'r') as emojis_file:
+    ball_to_emoji = yaml.safe_load(emojis_file).get("ball_to_emoji", {})
+
 with open("config.yml") as f:
     settings = yaml.load(f, Loader=yaml.FullLoader)
 
@@ -73,13 +76,21 @@ async def about(interaction: discord.Interaction):
     total_balls = len(countryballs)
     player_count = cursor.execute("SELECT COUNT(DISTINCT user_id) FROM caught_balls").fetchone()[0]
     total_caught_balls = cursor.execute("SELECT COUNT(*) FROM caught_balls").fetchone()[0]
+    
+    if total_balls == 1:
+        balls_to_show = ""
+    elif total_balls < 16:
+        balls_to_show = " ".join(random.choices(list(ball_to_emoji.values()), k=total_balls))
+    else:
+        balls_to_show = " ".join(random.choices(list(ball_to_emoji.values()), k=16))
 
     embed = discord.Embed(
         title=f"{bot_name}",
         description=f"""
+{balls_to_show}
 {about_description}
-
 Currently running version [1.6](https://github.com/wascertified/dockerless-dex/releases/tag/1.6)
+
 {total_balls} {collectibles_name}s to collect
 {player_count} players that caught {total_caught_balls} {collectibles_name}s
 {len(bot.guilds)} servers playing
@@ -88,6 +99,8 @@ This bot was made/coded by wascertified. The github is https://github.com/wascer
 
 Support Server: {discord_invite}
         """,
+
+
         color=discord.Color.blurple()
     )
     await interaction.response.send_message(embed=embed)
@@ -127,12 +140,9 @@ async def completion(interaction: discord.Interaction, member: discord.Member = 
     if not all_balls_data:
         await interaction.response.send_message(f"No {collectibles_name} added yet.")
         return
-        
-    with open('ymls/collectibles.yml', 'r') as emojis_file:
-        ball_to_emoji = yaml.safe_load(emojis_file).get("ball_to_emoji", {})
 
     embed = discord.Embed(
-        title=f"{username}'s",
+        title=f"{username}'s collected {collectibles_name}s",
         description=f"{bot_name} progression: **{len(user_owned_balls)/len(all_balls_data)*100:.2f}%**",
         color=discord.Color.blurple(),
     ).set_thumbnail(url=member.avatar.url)
@@ -414,5 +424,5 @@ if not slash_command_name:
 if not bot_name:
     print("No bot name was found in settings.yml! Please check your settings.")
     exit()
-  
+
 bot.run(token)

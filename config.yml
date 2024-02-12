@@ -1,15 +1,15 @@
 # Welcome to the config file. Please read the README.md file found at the ymls folder.
 
-bot-token: "Your Token Here" # The bot token for your bot.
-text-prefix: "b." # The prefix for text commands. They can be found at the README file mentioned above.
+bot-token: "nope" # The bot token for your bot.
+text-prefix: "m." # The prefix for text commands. They can be found at the README file mentioned above.
 
 # Stuff that will be shown on /about.
 about:
-  description: "Collect balls on Discord. Made for people without Docker or PC." # Edits the first line of /about.
-  github-link: "https://github.com/wascertified/dockerless-dex" # Only change this if you have a fork, this is not required and can be skipped.
+  description: "Collect moths on Discord. Made for people without Docker or PC." # Edits the first line of /about.
+  github-link: "https://github.com/MegaTreat/MothDex" # Only change this if you have a fork, this is not required and can be skipped.
   discord-invite: "https://discord.gg/RSdcTAn7FG" # Change to your discord server.
 
 # Stuff that will be used on commands.
-collectibles-name: "ball" # Don't add an "s" as the bot will already add the extra "s".
-bot-name: "Dockerless-Dex" # The name of the dex.
-players-group-cog-name: "balls" # No spaces, must be lowercase.
+collectibles-name: "moth" # Don't add an "s" as the bot will already add the extra "s".
+bot-name: "MothDex" # The name of the dex.
+players-group-cog-name: "moths" # No spaces, must be lowercase.
