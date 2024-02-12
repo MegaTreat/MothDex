@@ -291,7 +291,7 @@ class CatchModal(discord.ui.Modal):
             self.catch_button.label = "Caught!"
             await interaction.message.edit(view=self.catch_button.view)
         else:
-            await interaction.response.send_message(f"{interaction.user.mention} Wrong name! You wrote: {self.countryball_name_input}", ephemeral=False)
+            await interaction.response.send_message(f"{interaction.user.mention} Wrong name! You wrote: **{self.countryball_name_input}**", ephemeral=False)
 
 def check_if_user_owns_ball(user_id, ball_name):
     """
